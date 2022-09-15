@@ -5,11 +5,16 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 
 private val DarkColorPalette = darkColors(
-    primary = Purple200,
+    primary = Color.White,
     primaryVariant = Purple700,
-    secondary = Teal200
+    secondary = Teal200,
+    background = DarkGray,
+    onBackground = Color.White,
+    surface = LightBlue,
+    onSurface = DarkGray
 )
 
 private val LightColorPalette = lightColors(
@@ -36,7 +41,7 @@ fun JotterTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable
     }
 
     MaterialTheme(
-        colors = colors,
+        colors = DarkColorPalette,
         typography = Typography,
         shapes = Shapes,
         content = content
