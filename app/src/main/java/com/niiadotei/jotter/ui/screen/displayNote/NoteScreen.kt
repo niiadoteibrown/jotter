@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.niiadotei.jotter.ui.navigation.Screen
 import com.niiadotei.jotter.ui.screen.displayNote.component.NoteItem
 import com.niiadotei.jotter.ui.screen.displayNote.component.OrderSection
 import kotlinx.coroutines.launch
@@ -32,7 +33,7 @@ fun NoteScreen(
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(onClick = {
-
+               navController.navigate(Screen.EditNoteScreen.route)
             },
             backgroundColor = MaterialTheme.colors.primary
             ) {
@@ -98,7 +99,10 @@ fun NoteScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
-
+                                navController.navigate(
+                                    Screen.EditNoteScreen.route +
+                                            "?noteId=${note.id}&noteColor=${note.color}"
+                                )
                             }
                     ) {
                         viewModel.onEvent(event = NoteEvent.DeleteNote(note = note))
