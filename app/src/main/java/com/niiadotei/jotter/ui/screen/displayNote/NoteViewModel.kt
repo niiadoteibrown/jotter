@@ -1,4 +1,4 @@
-package com.niiadotei.jotter.ui.screen.note
+package com.niiadotei.jotter.ui.screen.displayNote
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State

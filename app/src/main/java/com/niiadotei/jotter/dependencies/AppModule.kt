@@ -6,7 +6,9 @@ import com.niiadotei.jotter.data.repository.NoteRepositoryImpl
 import com.niiadotei.jotter.data.source.NoteDatabase
 import com.niiadotei.jotter.domain.feature.NoteFeature
 import com.niiadotei.jotter.domain.repository.NoteRepository
+import com.niiadotei.jotter.domain.useCase.AddNote
 import com.niiadotei.jotter.domain.useCase.DeleteNote
+import com.niiadotei.jotter.domain.useCase.GetNote
 import com.niiadotei.jotter.domain.useCase.GetNotes
 import dagger.Module
 import dagger.Provides
@@ -39,7 +41,9 @@ object AppModule {
     fun provideNoteFeature(repository: NoteRepository) : NoteFeature {
         return NoteFeature(
             getNotes = GetNotes(noteRepository = repository),
-            deleteNote = DeleteNote(noteRepository = repository)
+            deleteNote = DeleteNote(noteRepository = repository),
+            getNote = GetNote(noteRepository = repository),
+            addNote = AddNote(noteRepository = repository)
         )
     }
 }

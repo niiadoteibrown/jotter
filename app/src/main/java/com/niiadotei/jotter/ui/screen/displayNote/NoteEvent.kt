@@ -1,4 +1,4 @@
-package com.niiadotei.jotter.ui.screen.note
+package com.niiadotei.jotter.ui.screen.displayNote
 
 import com.niiadotei.jotter.domain.model.Note
 import com.niiadotei.jotter.domain.util.NoteOrder
