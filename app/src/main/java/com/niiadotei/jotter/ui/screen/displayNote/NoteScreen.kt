@@ -21,6 +21,7 @@ import com.niiadotei.jotter.ui.screen.displayNote.component.NoteItem
 import com.niiadotei.jotter.ui.screen.displayNote.component.OrderSection
 import kotlinx.coroutines.launch
 
+@ExperimentalAnimationApi
 @Composable
 fun NoteScreen(
     navController: NavController,

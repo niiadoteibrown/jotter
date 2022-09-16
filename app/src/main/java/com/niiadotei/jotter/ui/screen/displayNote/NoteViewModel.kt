@@ -18,7 +18,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class NoteViewModel @Inject constructor(private val noteFeature: NoteFeature) : ViewModel() {
-    private val _state: MutableState<NoteState> = mutableStateOf<NoteState>(NoteState())
+    private val _state: MutableState<NoteState> = mutableStateOf(NoteState())
     val state: State<NoteState> = _state
 
     private var recentlyDeletedNote: Note? = null
